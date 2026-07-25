@@ -1,5 +1,12 @@
 #!/bin/bash
 
+# About : Shell Scripting in real time
+# Input : export username, export token and provide permission 
+# Owner : iam-veeramalla 
+
+####################
+
+helper()
 # GitHub API URL
 API_URL="https://api.github.com"
 
@@ -35,7 +42,11 @@ function list_users_with_read_access {
         echo "$collaborators"
     fi
 }
-
+function helper{
+ expected_cmd_args=2
+ if [ $#-notequals$expected_cmd_args]; then
+ echo " Please execute the required cmd args"
+}
 # Main script
 
 echo "Listing users with read access to ${REPO_OWNER}/${REPO_NAME}..."
